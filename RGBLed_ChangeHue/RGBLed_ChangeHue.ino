@@ -1,3 +1,6 @@
+// Convert Potentiometer analog input to color Hue, Saturation, and Luminance (HSL) values 
+// and then output the converted RGB PWM values to their respective LEDs.
+
 #include "math.h"
 #define DEG_TO_RAD(X) (M_PI*(X)/180)
 
@@ -16,7 +19,7 @@ const float L = 255;
 int rgbColour[3];
 
 void setup() {
- // Start off with the LED off.
+ // Start off with the LEDs off.
   setColourRgb(0,0,0);
   pinMode(ledRed, OUTPUT);
   pinMode(ledGreen, OUTPUT);
@@ -26,7 +29,6 @@ void setup() {
 }
 
 void loop() {
-  
   int potValue = analogRead(potPin);
   int mode = map(potValue, 0, 1023, 0, 360);
   H = mode;
@@ -42,15 +44,13 @@ void loop() {
 
 // Function to set the colors of LEDs
 void setColourRgb(unsigned int red, unsigned int green, unsigned int blue) {
- analogWrite(ledRed, red);
- analogWrite(ledGreen, green);
- analogWrite(ledBlue, blue);
+  analogWrite(ledRed, red);
+  analogWrite(ledGreen, green);
+  analogWrite(ledBlue, blue);
 }
-
 
 // Function takes H, S, I, and a pointer to the returned RGB colorspace converted vector. 
 // the vector rgb will contain red, green, and blue calculated values.
-
 void hsi2rgb(float H, float S, float I, int* rgb) {
   int r, g, b;
   H = fmod(H,360); // cycle H around to 0-360 degrees
