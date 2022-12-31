@@ -1,0 +1,3 @@
+We have used the MATLAB in order to show the long-term information of temperature and humidity in graphs,
+which we were previously kept in the EEPROM memory. 
+To export from memory we used a external software called CoolTerm, which generate a .asc text file. 
