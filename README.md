@@ -1,5 +1,4 @@
-# Embedded_System_Design
-MCTE4342 (Sem1-2022/2023)
+# Embedded Systems Design Experiments
 
 •	Experiments
 - Processor Registers Programming -	Register Programming LED Latch and Button Debounce
